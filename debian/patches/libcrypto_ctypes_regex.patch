@@ -1,0 +1,22 @@
+Origin: https://github.com/wbond/oscrypto/pull/76
+From: Martin Journois <BibMartin@users.noreply.github.com>
+Date: Thu, 10 Aug 2023 13:58:14 +0200
+Subject: MJ: Add fix suggested by @vcunat on _libcrypto_ctypes regex
+
+---
+ oscrypto/_openssl/_libcrypto_ctypes.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/oscrypto/_openssl/_libcrypto_ctypes.py b/oscrypto/_openssl/_libcrypto_ctypes.py
+index e33ebbc..9cb294a 100644
+--- a/oscrypto/_openssl/_libcrypto_ctypes.py
++++ b/oscrypto/_openssl/_libcrypto_ctypes.py
+@@ -40,7 +40,7 @@
+ 
+ is_libressl = 'LibreSSL' in version_string
+ 
+-version_match = re.search('\\b(\\d\\.\\d\\.\\d[a-z]*)\\b', version_string)
++version_match = re.search('\\b(\\d\\.\\d\\.\\d+[a-z]*)\\b', version_string)
+ if not version_match:
+     version_match = re.search('(?<=LibreSSL )(\\d\\.\\d(\\.\\d)?)\\b', version_string)
+ if not version_match:

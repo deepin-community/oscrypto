@@ -1,0 +1,6 @@
+# See uscan(1) for format
+version=4
+
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%oscrypto-$1.tar.gz%" \
+   https://github.com/wbond/oscrypto/tags \
+   (?:.*?/)?v?(\d[\d.]*)\.tar\.gz

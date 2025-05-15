@@ -1,0 +1,5 @@
+do_not_put_LICENSE_in_egg_info.patch
+libcrypto_ctypes_regex.patch
+openssl_3.0.10.patch
+Make_OpenSSL_version_regexes_more_robust.patch
+use-importlib-instead-of-deprecated-imp-module.patch
