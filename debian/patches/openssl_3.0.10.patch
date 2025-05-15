@@ -1,0 +1,22 @@
+Origin: https://github.com/wbond/oscrypto/pull/76
+From: Martin Journois <BibMartin@users.noreply.github.com>
+Date: Wed, 9 Aug 2023 17:55:29 +0200
+Subject: MJ: Fix #75 bug with openssl 3.0.10
+
+---
+ oscrypto/_openssl/_libcrypto_cffi.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/oscrypto/_openssl/_libcrypto_cffi.py b/oscrypto/_openssl/_libcrypto_cffi.py
+index 8aed03e..14eb576 100644
+--- a/oscrypto/_openssl/_libcrypto_cffi.py
++++ b/oscrypto/_openssl/_libcrypto_cffi.py
+@@ -37,7 +37,7 @@
+ 
+ is_libressl = 'LibreSSL' in version_string
+ 
+-version_match = re.search('\\b(\\d\\.\\d\\.\\d[a-z]*)\\b', version_string)
++version_match = re.search('\\b(\\d\\.\\d\\.\\d+[a-z]*)\\b', version_string)
+ if not version_match:
+     version_match = re.search('(?<=LibreSSL )(\\d\\.\\d(\\.\\d)?)\\b', version_string)
+ if not version_match:

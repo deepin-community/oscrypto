@@ -1,0 +1,13 @@
+--- a/setup.py
++++ b/setup.py
+@@ -59,10 +59,6 @@ class EggInfoCommand(egg_info):
+         )
+         if not os.path.exists(egg_info_path):
+             os.mkdir(egg_info_path)
+-        shutil.copy2(
+-            os.path.join(PACKAGE_ROOT, 'LICENSE'),
+-            os.path.join(egg_info_path, 'LICENSE')
+-        )
+         egg_info.run(self)
+ 
+ 

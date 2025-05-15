@@ -1,4 +1,11 @@
 #!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+export PYBUILD_NAME=oscrypto
+export PYBUILD_VERBOSE=1
+
+export OSCRYPTO_SKIP_INTERNET_TESTS=1
+export PYBUILD_TEST_ARGS=-k "not test_tls"
 
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
